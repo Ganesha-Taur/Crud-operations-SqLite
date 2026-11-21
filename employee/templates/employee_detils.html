@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Details</title>
+    <style>
+        .body {
+            align-items: center;
+            /* justify-content: center; */
+            
+        }
+        p{
+            font-weight: bold;
+        }
+        a {
+            text-decoration: none;
+            background-color: royalblue;
+            color: whitesmoke;
+            border-radius: 3px;
+        }
+        a:hover{
+            background-color: whitesmoke;
+            color: royalblue;
+            border: gray 2px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Employee Details </h1>
+    {% comment %} {% for i in employee %}
+     {% endcomment %}
+    
+   <p>Emp ID: &nbsp;{{employee.id}}</p>
+   <p>Emp Name:&nbsp; {{employee.name}}</p>
+   <p>Emp Email:&nbsp; {{employee.email}}</p>
+   <p>Emp Dept:&nbsp; {{employee.dept}}</p>
+   <p>Emp Salary:&nbsp; {{employee.salary}}</p>
+   <hr>
+   <a href="{% url 'employee_list' %}">Back to List</a>
+    {% comment %} {% endfor %} {% endcomment %}
+</body>
+</html>

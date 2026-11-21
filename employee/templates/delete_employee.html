@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    form {
+    max-width: 400px;
+    margin: 80px auto;
+    padding: 25px;
+    border: 1px solid lightgray;
+    border-radius: 8px;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+.btn-danger, .btn-secondary {
+    padding: 10px 18px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-danger {
+    background: crimson;
+    color: white;
+}
+
+.btn-secondary {
+    background: lightgray;
+    color: black;
+}
+</style>
+</head>
+<body>
+   {% comment %} <h3>Are you want to delte {{ employee.name}}? </h3>
+
+<form method="POST">
+    {% csrf_token %}{% for emp in employees %}
+    <button type="submit" class="btn btn-danger" method="POST">Confirm </button>
+    <a href="{% url 'employee_list' %}" class="btn btn-secondary">Cancel</a>
+
+
+    <a href="{% url 'delete_employee' emp.id %}">Delete</a>
+{% endfor %} {% endcomment %}
+<h3>Are you sure you want to delete {{ employee.name }}?</h3>
+
+<form method="POST">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Confirm</button>
+    <a href="{% url 'employee_list' %}" class="btn btn-secondary">Cancel</a>
+</form>
+
+</form>
+</body>
+</html>

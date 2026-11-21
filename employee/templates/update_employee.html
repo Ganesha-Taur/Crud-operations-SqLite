@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+     <style>
+
+    body {
+      background-color: wheat;
+      align-items: center;
+      justify-content: center;
+    }
+
+    h1 {
+      text-align: center;
+      background-color: whitesmoke;
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: left;
+      padding: 10px;
+    }
+
+    .form-row {
+      display: flex;
+      gap: 15px; /* Fields ke beech ki doori */
+      flex-wrap: wrap; /* Chhoti screen par neeche shift hone ke liye */
+      justify-content: center;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column; /* Label upar aur input neeche rakhne ke liye */
+      flex: 1; /* Sabhi boxes ko barabar width dene ke liye */
+      min-width: 180px;
+    }
+
+    .field span {
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+   form, input {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+         }
+    hr {
+      width: 100%;
+      margin: 15px 0;
+    }
+
+    button {
+      border-radius: 5px;
+      padding: 10px 20px;
+      background-color: royalblue;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: whitesmoke;
+      color: royalblue;
+    }
+</style>
+
+        </style>
+</head>
+<body>
+    <h1>Update Employee Here</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <!-- <p>Employee Name</p> -->
+        <span>Employee Name</span>
+        <input type="text" name="name" placeholder="Enter Employee Name" >
+        <span>Employee Email</span>
+        <input type="email" name="email" placeholder="Enter employee email">
+        <span>Employee Department</span>
+        <input type="text" name="dept" placeholder="Enter dept of employee">
+        <span>Employee Salary 
+        </span>
+        <input type="number" name="salary" placeholder="Enter employee salary">
+        <hr>
+        <button type="submit">Submit</button>
+
+    </form>
+</body>
+</html>

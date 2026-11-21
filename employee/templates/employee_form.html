@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Employee</title>
+    <style>
+        body{
+            background-color: wheat;
+            align-items: center;
+            justify-content: center;
+
+        }
+        h1{
+            text-align: center;
+            background-color: whitesmoke;
+            
+            justify-content: center;
+            align-items: center;
+        }
+         form {
+            align-items: center;
+            justify-content: center;
+            text-align: left;
+         }
+         form, input {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+         }
+        button {
+      border-radius: 5px;
+      padding: 10px 20px;
+      background-color: royalblue;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: whitesmoke;
+      color: royalblue;
+    }
+    </style>
+</head>
+<body>
+    <h1>Add Employee Here</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <!-- <p>Employee Name</p> -->
+         <span>Employee Name</span>
+        <input type="text" name="name" placeholder="Enter Employee Name" >
+        <span>Employee Email</span>
+        <input type="email" name="email" placeholder="Enter employee email">
+        <span>Employee Department</span>
+        <input type="text" name="dept" placeholder="Enter dept of employee">
+        <span>Employee Salary 
+        </span>
+        <input type="number" name="salary" placeholder="Enter employee salary">
+        <hr>
+        <button type="submit">Submit</button>
+
+    </form>
+</body>
+</html>
